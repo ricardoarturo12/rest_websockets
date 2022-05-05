@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"github.com/ricardoarturo12/rest_websockets/handlers"
+	"github.com/ricardoarturo12/rest_websockets/middleware"
 	"github.com/ricardoarturo12/rest_websockets/server"
 )
 
@@ -38,6 +39,11 @@ func main() {
 
 // binder
 func BindRoutes(s server.Server, r *mux.Router) {
+	// utiliza el middleware
+	r.Use(middleware.CheckAuthMiddleware(s))
 	r.HandleFunc("/", handlers.HomeHandler(s)).Methods(http.MethodGet)
 	r.HandleFunc("/signup", handlers.SignUpHandler(s)).Methods(http.MethodPost)
+	r.HandleFunc("/login", handlers.LoginHandler(s)).Methods(http.MethodPost)
+	r.HandleFunc("/me", handlers.MeHandler(s)).Methods(http.MethodGet)
+
 }

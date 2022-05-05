@@ -6,7 +6,9 @@ go get github.com/lib/pq
 <!-- para generar ids al usuario -->
 go get github.com/segmentio/ksuid
 
+go get golang.org/x/crypto/bcrypt
 
+github.com/golang-jwt/jwt
 # docker build
 
 docker build . -t platzi-ws-rest-db
