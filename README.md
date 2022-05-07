@@ -8,7 +8,9 @@ go get github.com/segmentio/ksuid
 
 go get golang.org/x/crypto/bcrypt
 
-github.com/golang-jwt/jwt
+go getgithub.com/golang-jwt/jwt
+
+go get github.com/gorilla/websocket
 # docker build
 
 docker build . -t platzi-ws-rest-db
