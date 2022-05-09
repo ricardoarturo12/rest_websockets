@@ -17,3 +17,6 @@ go get github.com/rs/cors
 
 docker build . -t platzi-ws-rest-db
 
+
+<!-- antes de contruir dockerfile -->
+go mod tidy
